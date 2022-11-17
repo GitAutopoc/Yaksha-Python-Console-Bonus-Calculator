@@ -5,11 +5,11 @@ import requests
 
 class TestUtils:
     GUID = "dc66f3c1-630f-40ab-8314-f7bb9ffcb71f"
-    URL = "https://yaksha-prod-sbfn.azurewebsites.net/api/YakshaMFAEnqueue?code=jSTWTxtQ8kZgQ5FC0oLgoSgZG7UoU9Asnmxgp6hLLvYId/GW9ccoLw=="
+    URL = "https://yaksha-stage-s1-sbfn.azurewebsites.net/api/YakshaMFAEnqueue?code=gYgYufbXMGS32FhIBam_kpJyi5Sc6UhZom0-mKbZ_501AzFuuj5f1w=="
 
     @classmethod
     def yakshaAssert(self, test_name, result, test_type):
-        ref = open("../../custom.ih", "r")
+        ref = open("../custom.ih", "r")
         customData = ref.read()
         ref.close()
         test_case_results = dict()
