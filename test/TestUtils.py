@@ -31,4 +31,4 @@ class TestUtils:
         test_results = TestResults(json.dumps(test_case_results), customData, hostName, attemptId)
         final_result = json.dumps(test_results)
 
-        requests.post(self.URL, final_result)
+        requests.post(self.URL, final_result, headers={"Content-Type": "application/json"})
