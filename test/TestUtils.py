@@ -31,4 +31,6 @@ class TestUtils:
         test_results = TestResults(json.dumps(test_case_results), customData, hostName, attemptId)
         final_result = json.dumps(test_results)
 
-        requests.post(self.URL, final_result, headers={"Content-Type": "application/json"})
+        response = requests.post(self.URL, final_result, headers={"Content-Type": "application/json"})
+        if response.status_code not in [200, 201]:
+            print({'message': 'Unable to push test case on server, please try again'})
